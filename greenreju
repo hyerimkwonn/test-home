@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenReju Launching Invitation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500&family=Playfair+Display:ital@0;1&display=swap');
+
+        :root {
+            --primary-green: #4A6741; /* 프리메라 느낌의 깊은 그린 */
+            --mint-bg: #F2F7F2; /* 아비브 느낌의 깨끗한 민트 그레이 */
+            --soft-mint: #D9EAD3;
+            --text-color: #333;
+            --accent-mint: #88B092;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--mint-bg);
+            color: var(--text-color);
+            font-family: 'Noto Sans KR', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .invitation-card {
+            width: 100%;
+            max-width: 450px;
+            background: #ffffff;
+            padding: 40px 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 자연주의 장식 요소 */
+        .invitation-card::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: var(--soft-mint);
+            border-radius: 50%;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .content-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            letter-spacing: 0.2rem;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .sub-title {
+            font-size: 0.8rem;
+            letter-spacing: 0.3rem;
+            color: var(--accent-mint);
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .main-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 40px;
+            word-break: keep-all;
+        }
+
+        .info-box {
+            background-color: var(--mint-bg);
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .info-item {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-label {
+            font-weight: 500;
+            color: var(--primary-green);
+            width: 80px;
+        }
+
+        .dress-code {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #fff;
+            border: 1px solid var(--accent-mint);
+            color: var(--primary-green);
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* 폼 스타일 */
+        .rsvp-form {
+            margin-top: 30px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 0;
+            margin-bottom: 15px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            outline: none;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-bottom: 1px solid var(--primary-green);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.1rem;
+            margin-top: 10px;
+            transition: opacity 0.3s;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* QR 코드 화면 (초기 숨김) */
+        #qr-screen {
+            display: none;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .qr-placeholder {
+            width: 180px;
+            height: 180px;
+            background: #fff;
+            border: 1px solid var(--soft-mint);
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* 가짜 QR 코드 그래픽 */
+        .qr-inner {
+            width: 150px;
+            height: 150px;
+            background: repeating-conic-gradient(#4A6741 0% 25%, #fff 0% 50%) 50% / 20px 20px;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invitation-card">
+        <div id="invite-screen" class="content-inner">
+            <div class="brand-logo">GreenReju</div>
+            <div class="sub-title">BRAND LAUNCHING</div>
+            
+            <div class="main-text">
+                다시 깨어나는 피부의 생명력.<br>
+                그린리쥬의 첫 번째 여정에<br>
+                당신을 소중히 초대합니다.
+            </div>
+
+            <div class="info-box">
+                <div class="info-item">
+                    <span class="info-label">DATE</span>
+                    <span>2027. 05. 07. 15:00</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">PLACE</span>
+                    <span>서울 신라호텔 영빈관</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">DRESS</span>
+                    <span class="dress-code">Green & Mint</span>
+                </div>
+            </div>
+
+            <div class="rsvp-form">
+                <input type="text" id="userName" placeholder="성함을 입력해주세요" required>
+                <input type="tel" id="userPhone" placeholder="전화번호를 입력해주세요" required>
+                <button class="submit-btn" onclick="showQR()">참석 의사 전달하기</button>
+            </div>
+        </div>
+
+        <div id="qr-screen" class="content-inner">
+            <div class="brand-logo">GreenReju</div>
+            <div style="margin: 40px 0;">
+                <h2 style="font-weight: 400; font-size: 1.2rem;">참석 예약 완료</h2>
+                <p style="font-size: 0.85rem; color: #666; line-height: 1.6;">
+                    <span id="display-name" style="color: var(--primary-green); font-weight: 500;"></span> 님, 신청되었습니다.<br>
+                    행사 당일 아래의 QR코드를 제시해 주세요.
+                </p>
+            </div>
+
+            <div class="qr-placeholder">
+                <div class="qr-inner"></div>
+            </div>
+
+            <p style="font-size: 0.75rem; color: var(--accent-mint); margin-top: 30px;">
+                * 2027. 05. 07 15:00 입장이 시작됩니다.
+            </p>
+            <button class="submit-btn" style="background: none; border: 1px solid var(--accent-mint); color: var(--accent-mint);" onclick="location.reload()">돌아가기</button>
+        </div>
+    </div>
+
+    <script>
+        function showQR() {
+            const name = document.getElementById('userName').value;
+            const phone = document.getElementById('userPhone').value;
+
+            if(name && phone) {
+                document.getElementById('display-name').innerText = name;
+                document.getElementById('invite-screen').style.display = 'none';
+                document.getElementById('qr-screen').style.display = 'block';
+            } else {
+                alert('성함과 전화번호를 모두 입력해 주세요.');
+            }
+        }
+    </script>
+</body>
+</html>
